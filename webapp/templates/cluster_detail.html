@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Cluster: {{ cluster.topic or "Cluster " + cluster.id|string }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">{{ cluster.topic or "Cluster " + cluster.id|string }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h4 mb-0">{{ cluster.topic or "Cluster " + cluster.id|string }}</h2>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Summary</h5>
+                <div class="summary-text">{{ summary }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h3>Key Entities</h3>
+        <div>
+            {% for entity in entities %}
+                <span class="entity-pill entity-{{ entity.label }}">
+                    {{ entity.text }} ({{ entity.label }})
+                </span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Articles in this Cluster ({{ articles|length }})</h3>
+        <div class="list-group">
+            {% for article in articles %}
+            <div class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ article.title }}</h5>
+                    <small>{{ article.published_date.strftime('%Y-%m-%d') }}</small>
+                </div>
+                <p class="mb-1">{{ article.content|truncate(200) }}</p>
+                <small>Source: {{ article.source }} {% if article.author %}| Author: {{ article.author }}{% endif %}</small>
+                <div class="mt-2">
+                    <a href="{{ article.url }}" target="_blank" class="btn btn-sm btn-outline-primary">Read Original</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Analytics - Local Event Detection{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Analytics Dashboard</h1>
+        <p class="lead">
+            Insights and statistics from the local event detection system.
+        </p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Total Articles</h5>
+                <p class="card-text display-4">{{ stats.total_articles }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Event Clusters</h5>
+                <p class="card-text display-4">{{ stats.total_clusters }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Named Entities</h5>
+                <p class="card-text display-4">{{ stats.total_entities }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Entity Frequency
+            </div>
+            <div class="card-body text-center">
+                <img src="/static/entity_frequency.png" alt="Entity frequency chart" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Cluster Distribution
+            </div>
+            <div class="card-body text-center">
+                <img src="/static/cluster_distribution.png" alt="Cluster distribution chart" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Source Distribution
+            </div>
+            <div class="card-body text-center">
+                <img src="/static/source_distribution.png" alt="Source distribution chart" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Source Statistics
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Articles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for source, count in sources.items() %}
+                        <tr>
+                            <td>{{ source }}</td>
+                            <td>{{ count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

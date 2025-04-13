@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Local Event Detection - Home{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Local Event Clusters</h1>
+        <p class="lead">
+            The system has detected the following local event clusters. 
+            Click on a cluster to view articles and detailed summaries.
+        </p>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+    {% for cluster in clusters %}
+    <div class="col">
+        <div class="card h-100 cluster-card">
+            <div class="card-body">
+                <h5 class="card-title">{{ cluster.topic }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ cluster.article_count }} articles</h6>
+                <p class="card-text">{{ cluster.summary|truncate(200) }}</p>
+            </div>
+            <div class="card-footer bg-transparent">
+                <a href="/cluster/{{ cluster.id }}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-info">
+            No event clusters found yet. Please check back later or run the data pipeline.
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

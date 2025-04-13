@@ -1,0 +1,17 @@
+requests==2.28.2
+beautifulsoup4==4.11.1
+newspaper3k==0.2.8
+numpy~=1.26.4  # Add this line
+scikit-learn==1.2.2
+nltk==3.8.1
+spacy==3.5.2
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
+transformers==4.21.3
+torch==1.13.1
+Flask==2.3.2
+SQLAlchemy==1.4.46
+APScheduler==3.9.1
+matplotlib==3.7.1
+seaborn==0.12.2
+sentence-transformers==2.2.2
+BERTopic==0.14.1
