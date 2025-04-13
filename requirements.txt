@@ -1,17 +1,21 @@
 requests==2.28.2
 beautifulsoup4==4.11.1
 newspaper3k==0.2.8
-numpy~=1.26.4  # Add this line
+numpy~=1.26.4 # Compatible with scikit-learn 1.2.2
 scikit-learn==1.2.2
 nltk==3.8.1
 spacy==3.5.2
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
+# Direct link to specific spaCy model version
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz#egg=en_core_web_sm
 transformers==4.21.3
 torch==1.13.1
 Flask==2.3.2
-SQLAlchemy==1.4.46
-APScheduler==3.9.1
+SQLAlchemy<2.0,>=1.4.46 # Pinned below 2.0 due to API changes
+APScheduler==3.9.1 # Note: This version was yanked but seems to work here
 matplotlib==3.7.1
 seaborn==0.12.2
 sentence-transformers==2.2.2
+huggingface-hub<0.11.0 # Required by sentence-transformers 2.2.2
 BERTopic==0.14.1
+lxml_html_clean==0.4.2 # Required by newspaper3k due to lxml changes
+feedparser==6.0.11 # Dependency for RSS scraping
