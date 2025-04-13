@@ -10,6 +10,18 @@ import sys
 import os
 import random
 from urllib.parse import urlparse
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scraper.log'))
+    ]
+)
+logger = logging.getLogger('scraper')
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from database.models import Article, setup_db
@@ -19,6 +31,8 @@ def clean_text(text):
         return ""
     # Remove html tags
     text = re.sub(r'<[^>]+>', '', text)
+    # Remove excess whitespace
+    text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
 def extract_article(url):
@@ -30,7 +44,7 @@ def extract_article(url):
         
         # If content is too short, it might be a restricted article
         if article.text and len(article.text) < 100:
-            print(f"Article content too short, might be paywalled: {url}")
+            logger.warning(f"Article content too short, might be paywalled: {url}")
         
         return {
             'title': article.title,
@@ -39,7 +53,7 @@ def extract_article(url):
             'published_date': article.publish_date
         }
     except Exception as e:
-        print(f"Error extracting article from {url}: {e}")
+        logger.error(f"Error extracting article from {url}: {e}")
         return None
 
 def get_random_user_agent():
@@ -48,31 +62,74 @@ def get_random_user_agent():
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15",
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
     ]
     return random.choice(user_agents)
 
-def scrape_rss_feed(session, feed_url, source_name):
+def is_local_seattle_news(article_title, article_content):
+    """Determine if an article is about local Seattle/Washington news"""
+    # List of local terms to check for
+    local_terms = [
+        'seattle', 'washington', 'tacoma', 'bellevue', 'everett', 'olympia', 
+        'kirkland', 'redmond', 'renton', 'kent', 'federal way', 'auburn', 
+        'bothell', 'issaquah', 'sammamish', 'burien', 'tukwila', 'mercer island',
+        'shoreline', 'lake washington', 'puget sound', 'king county', 'pierce county',
+        'snohomish county', 'sound transit', 'space needle', 'pike place', 'seahawks',
+        'mariners', 'uw', 'university of washington', 'washington state', 'wsu'
+    ]
+    
+    # Convert to lowercase for case-insensitive matching
+    title_lower = article_title.lower()
+    content_lower = article_content.lower() if article_content else ""
+    
+    # Check title first (stronger indicator)
+    for term in local_terms:
+        if term in title_lower:
+            return True
+    
+    # Check beginning of content (first 1000 chars)
+    content_start = content_lower[:1000] if len(content_lower) > 1000 else content_lower
+    for term in local_terms:
+        if term in content_start:
+            return True
+    
+    return False
+
+def scrape_rss_feed(session, feed_url, source_name, limit=15, local_only=False):
     """Scrape news from an RSS feed"""
-    print(f"Fetching RSS feed from {feed_url} for {source_name}...")
+    logger.info(f"Fetching RSS feed from {feed_url} for {source_name}...")
     
     try:
         feed = feedparser.parse(feed_url)
         
         if not feed.entries:
-            print(f"No entries found in RSS feed for {source_name}")
+            logger.warning(f"No entries found in RSS feed for {source_name}")
             return
             
-        print(f"{source_name}: Found {len(feed.entries)} potential articles in RSS feed.")
+        logger.info(f"{source_name}: Found {len(feed.entries)} potential articles in RSS feed.")
         
         articles = []
-        for entry in feed.entries[:15]:  # Limit to 15 articles per source
+        for entry in feed.entries[:limit]:  # Limit articles per source
             article_url = entry.link
+            
+            # Skip certain URLs that are known to be problematic
+            if "javascript:" in article_url or article_url.endswith(('.pdf', '.jpg', '.png')):
+                continue
+                
+            # Skip articles from certain categories if present
+            if hasattr(entry, 'tags'):
+                categories = [tag.term.lower() for tag in entry.tags if hasattr(tag, 'term')]
+                skip_categories = ['sponsored', 'advertisement', 'obituaries']
+                if any(cat in skip_categories for cat in categories):
+                    logger.info(f"Skipping article in category {categories}: {article_url}")
+                    continue
             
             # Check if article already exists in DB
             existing = session.query(Article).filter_by(url=article_url).first()
             if existing:
-                print(f"{source_name}: Skipping existing article: {article_url}")
+                logger.debug(f"{source_name}: Skipping existing article: {article_url}")
                 continue
             
             # Try to get content from RSS first
@@ -82,32 +139,35 @@ def scrape_rss_feed(session, feed_url, source_name):
                     content += content_item.value
             elif hasattr(entry, 'summary'):
                 content = entry.summary
-                
+            
+            title = entry.title
+            author = entry.get('author', None)
+            published_date = datetime(*entry.published_parsed[:6]) if hasattr(entry, 'published_parsed') else datetime.now()
+            
+            # Clean content from RSS
+            content = clean_text(content)
+            
             # If content from RSS is very short, try to extract the full article
-            if len(content) < 200:
+            if len(content) < 300:
                 article_data = extract_article(article_url)
                 if article_data and article_data.get('content'):
                     # Use data from article extraction
-                    title = article_data['title']
                     content = article_data['content']
-                    author = article_data['author']
-                    published_date = article_data['published_date']
-                else:
-                    # Use data from RSS feed
-                    title = entry.title
-                    author = entry.get('author', None)
-                    content = clean_text(content)
-                    published_date = datetime(*entry.published_parsed[:6]) if hasattr(entry, 'published_parsed') else datetime.now()
-            else:
-                # Use data from RSS feed directly
-                title = entry.title
-                author = entry.get('author', None)
-                content = clean_text(content)
-                published_date = datetime(*entry.published_parsed[:6]) if hasattr(entry, 'published_parsed') else datetime.now()
-                
+                    if not title or len(title) < 3:
+                        title = article_data['title']
+                    if not author and article_data['author']:
+                        author = article_data['author']
+                    if article_data['published_date']:
+                        published_date = article_data['published_date']
+            
             # Skip if content is too short (likely paywalled or restricted)
             if len(content) < 100:
-                print(f"{source_name}: Content too short, skipping: {article_url}")
+                logger.info(f"{source_name}: Content too short, skipping: {article_url}")
+                continue
+            
+            # Check if it's relevant to Seattle/Washington if local_only flag is set
+            if local_only and not is_local_seattle_news(title, content):
+                logger.info(f"{source_name}: Not related to Seattle/Washington, skipping: {title}")
                 continue
                 
             new_article = Article(
@@ -121,53 +181,77 @@ def scrape_rss_feed(session, feed_url, source_name):
             
             session.add(new_article)
             articles.append(new_article)
-            print(f"{source_name}: Added article: {title}")
-            time.sleep(1)  # Be respectful
+            logger.info(f"{source_name}: Added article: {title}")
+            
+            # Random delay between 1-3 seconds to be respectful
+            time.sleep(random.uniform(1, 3))
         
         session.commit()
-        print(f"Scraped {len(articles)} new articles from {source_name}")
+        logger.info(f"Scraped {len(articles)} new articles from {source_name}")
+        return len(articles)
     except Exception as e:
-        print(f"Error scraping {source_name} RSS feed: {e}")
+        logger.error(f"Error scraping {source_name} RSS feed: {e}")
         session.rollback()
+        return 0
 
 def scrape_seattle_pi_rss(session):
     """Scrape Seattle PI RSS feed"""
     feed_url = "https://www.seattlepi.com/rss/feed/Seattle-News-145.php"
-    scrape_rss_feed(session, feed_url, "Seattle PI")
+    return scrape_rss_feed(session, feed_url, "Seattle PI", local_only=True)
 
 def scrape_komo_rss(session):
     """Scrape KOMO News RSS feed"""
     feed_url = "https://komonews.com/feed/rss2/news/local"
-    scrape_rss_feed(session, feed_url, "KOMO News")
+    return scrape_rss_feed(session, feed_url, "KOMO News", local_only=True)
 
 def scrape_my_northwest_rss(session):
     """Scrape MyNorthwest RSS feed"""
     feed_url = "https://mynorthwest.com/feed/"
-    scrape_rss_feed(session, feed_url, "MyNorthwest")
+    return scrape_rss_feed(session, feed_url, "MyNorthwest", local_only=True)
 
 def scrape_king5_rss(session):
     """Scrape KING5 News RSS feed"""
     feed_url = "https://www.king5.com/feeds/syndication/rss/news/local"
-    scrape_rss_feed(session, feed_url, "KING5 News")
+    return scrape_rss_feed(session, feed_url, "KING5 News", local_only=True)
 
 def scrape_seattle_medium_rss(session):
     """Scrape The Seattle Medium RSS feed"""
     feed_url = "https://seattlemedium.com/category/news/feed/"
-    scrape_rss_feed(session, feed_url, "Seattle Medium")
+    return scrape_rss_feed(session, feed_url, "Seattle Medium")
 
 def scrape_the_stranger_rss(session):
     """Scrape The Stranger RSS feed"""
     feed_url = "https://www.thestranger.com/syndication/rss-feed-with-images"
-    scrape_rss_feed(session, feed_url, "The Stranger")
+    return scrape_rss_feed(session, feed_url, "The Stranger", local_only=True)
+
+def scrape_crosscut_rss(session):
+    """Scrape Crosscut RSS feed"""
+    feed_url = "https://crosscut.com/feed/"
+    return scrape_rss_feed(session, feed_url, "Crosscut", local_only=True)
+
+def scrape_south_seattle_emerald_rss(session):
+    """Scrape South Seattle Emerald RSS feed"""
+    feed_url = "https://southseattleemerald.com/feed/"
+    return scrape_rss_feed(session, feed_url, "South Seattle Emerald", local_only=True)
+
+def scrape_capitol_hill_seattle_rss(session):
+    """Scrape Capitol Hill Seattle Blog RSS feed"""
+    feed_url = "https://www.capitolhillseattle.com/feed/"
+    return scrape_rss_feed(session, feed_url, "Capitol Hill Seattle Blog", local_only=True)
+
+def scrape_local_google_news(session):
+    """Scrape Google News for Seattle news"""
+    feed_url = "https://news.google.com/rss/search?q=seattle+washington+news&hl=en-US&gl=US&ceid=US:en"
+    return scrape_rss_feed(session, feed_url, "Google News - Seattle", limit=10, local_only=True)
 
 def create_sample_articles(session):
     """Create sample articles if no articles were scraped"""
     count = session.query(Article).count()
     if count > 0:
-        print(f"Database already has {count} articles, skipping sample creation.")
+        logger.info(f"Database already has {count} articles, skipping sample creation.")
         return
         
-    print("Creating sample articles for testing purposes...")
+    logger.info("Creating sample articles for testing purposes...")
     
     # Sample article 1
     article1 = Article(
@@ -293,27 +377,47 @@ def create_sample_articles(session):
     
     session.add_all([article1, article2, article3, article4, article5, article6, article7])
     session.commit()
-    print("Created 7 sample articles for testing")
+    logger.info("Created 7 sample articles for testing")
 
 def run_scraper():
     session = setup_db()
-    print("Starting scraper...")
+    logger.info("Starting scraper...")
+    
+    # Track total articles scraped
+    total_articles = 0
     
     # Try scraping from multiple RSS feeds
-    scrape_seattle_pi_rss(session)
-    scrape_komo_rss(session)
-    scrape_my_northwest_rss(session)
-    scrape_king5_rss(session)
-    scrape_seattle_medium_rss(session)
-    scrape_the_stranger_rss(session)
+    rss_sources = [
+        scrape_seattle_pi_rss,
+        scrape_komo_rss,
+        scrape_my_northwest_rss,
+        scrape_king5_rss,
+        scrape_seattle_medium_rss,
+        scrape_the_stranger_rss,
+        scrape_crosscut_rss,
+        scrape_south_seattle_emerald_rss,
+        scrape_capitol_hill_seattle_rss,
+        scrape_local_google_news
+    ]
+    
+    for source_func in rss_sources:
+        try:
+            # Add a small delay between different sources
+            time.sleep(random.uniform(1, 3))
+            articles_scraped = source_func(session)
+            total_articles += articles_scraped if articles_scraped else 0
+        except Exception as e:
+            logger.error(f"Error in {source_func.__name__}: {e}")
     
     # Create sample articles if no real articles were successfully scraped
-    article_count = session.query(Article).count()
-    if article_count == 0:
+    if total_articles == 0:
         create_sample_articles(session)
     
+    # Log final count
+    article_count = session.query(Article).count()
+    logger.info(f"Scraper completed. Total articles in database: {article_count}")
+    
     session.close()
-    print("Scraping completed.")
 
 if __name__ == "__main__":
     run_scraper()
