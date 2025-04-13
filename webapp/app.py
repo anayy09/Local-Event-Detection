@@ -18,6 +18,11 @@ from sqlalchemy import func
 
 app = Flask(__name__)
 
+# Add datetime to Jinja context for use in templates (e.g., footer year)
+@app.context_processor
+def inject_now():
+    return {'now': datetime.utcnow}
+
 @app.route('/')
 def index():
     """Home page showing clusters and summaries"""
@@ -113,6 +118,11 @@ def analytics():
     session.close()
     
     return render_template('analytics.html', stats=stats, sources=source_stats)
+
+@app.route('/about')
+def about():
+    """About page explaining the project"""
+    return render_template('about.html')
 
 def run_pipeline():
     """Run the full data pipeline"""

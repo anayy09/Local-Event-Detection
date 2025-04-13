@@ -1,0 +1,91 @@
+<!-- filepath: c:\Users\anays\heydev\Copilot\LocalEventDetection\webapp\templates\about.html -->
+{% extends 'base.html' %}
+
+{% block title %}About - Local Event Detection{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card p-4 p-md-5">
+            <h1 class="mb-4 text-center">About This Project</h1>
+            <p class="lead text-center mb-5">
+                This system automatically detects, clusters, and summarizes local news events from various online sources.
+            </p>
+
+            <h2 class="h4 mb-3 border-bottom pb-2">How It Works</h2>
+
+            <ol class="list-group list-group-numbered mb-4">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">1. News Scraping</div>
+                        Articles are collected from configured local news websites and RSS feeds. Duplicate articles are skipped.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">2. Preprocessing</div>
+                        The raw text content of each article is cleaned (HTML removed, whitespace normalized) and prepared for analysis.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">3. Named Entity Recognition (NER)</div>
+                        Key entities (like People, Organizations, Locations, Dates) are identified within the article text using NLP models.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">4. Embedding & Clustering</div>
+                        Articles are converted into numerical representations (embeddings) based on their content. Articles with similar content are grouped together into clusters using algorithms like K-Means. Each cluster represents a potential news event.
+                    </div>
+                </li>
+                 <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">5. Topic Modeling</div>
+                        For each cluster, topic modeling techniques (like BERTopic) are used to identify the main keywords and assign a representative topic name.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">6. Summarization</div>
+                        An abstractive or extractive summary is generated for each event cluster, condensing the information from all articles within that cluster.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">7. Analysis & Visualization</div>
+                        Statistics and visualizations are created based on the collected data, such as entity frequency and cluster distribution.
+                    </div>
+                </li>
+                 <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">8. Web Interface</div>
+                        A web application (built with Flask) allows users to browse the detected event clusters, view summaries, explore related articles, and see analytics.
+                    </div>
+                </li>
+                 <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">9. Automation</div>
+                        The entire pipeline (Steps 1-7) is scheduled to run automatically at regular intervals (e.g., every 6 hours) to keep the event data up-to-date.
+                    </div>
+                </li>
+            </ol>
+
+            <h2 class="h4 mb-3 border-bottom pb-2">Technology Stack</h2>
+            <p>
+                This project utilizes Python and several libraries, including:
+                <strong>Flask</strong> (Web Framework),
+                <strong>SQLAlchemy</strong> (Database ORM),
+                <strong>Requests/BeautifulSoup/Newspaper3k/Feedparser</strong> (Web Scraping),
+                <strong>NLTK/spaCy</strong> (Preprocessing, NER),
+                <strong>Scikit-learn/Sentence-Transformers</strong> (Embeddings, Clustering),
+                <strong>BERTopic</strong> (Topic Modeling),
+                <strong>Transformers/Torch</strong> (Summarization Models),
+                <strong>Matplotlib/Seaborn</strong> (Visualization),
+                <strong>APScheduler</strong> (Task Scheduling),
+                and <strong>Bootstrap</strong> (Frontend Styling).
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,263 @@
+2025-04-13 01:22:22,499 - scraper - INFO - Starting scraper...
+2025-04-13 01:22:25,445 - scraper - INFO - Fetching RSS feed from https://www.seattlepi.com/rss/feed/Seattle-News-145.php for Seattle PI...
+2025-04-13 01:22:25,837 - scraper - WARNING - No entries found in RSS feed for Seattle PI
+2025-04-13 01:22:27,031 - scraper - INFO - Fetching RSS feed from https://komonews.com/feed/rss2/news/local for KOMO News...
+2025-04-13 01:22:27,456 - scraper - WARNING - No entries found in RSS feed for KOMO News
+2025-04-13 01:22:30,253 - scraper - INFO - Fetching RSS feed from https://mynorthwest.com/feed/ for MyNorthwest...
+2025-04-13 01:22:30,664 - scraper - INFO - MyNorthwest: Found 20 potential articles in RSS feed.
+2025-04-13 01:22:30,672 - scraper - INFO - MyNorthwest: Not related to Seattle/Washington, skipping: New gear could keep California crab fishermen on the water longer, and whales safe
+2025-04-13 01:22:30,674 - scraper - INFO - MyNorthwest: Not related to Seattle/Washington, skipping: New laws complicate Wyoming’s abortion situation as bans set to be argued in state Supreme Court
+2025-04-13 01:22:30,675 - scraper - INFO - MyNorthwest: Not related to Seattle/Washington, skipping: As Congress tables proxy voting, state lawmakers seek solutions for parents who serve in office
+2025-04-13 01:22:30,683 - scraper - INFO - Scraped 0 new articles from MyNorthwest
+2025-04-13 01:22:33,523 - scraper - INFO - Fetching RSS feed from https://www.king5.com/feeds/syndication/rss/news/local for KING5 News...
+2025-04-13 01:22:33,793 - scraper - INFO - KING5 News: Found 40 potential articles in RSS feed.
+2025-04-13 01:22:33,801 - scraper - INFO - Scraped 0 new articles from KING5 News
+2025-04-13 01:22:35,048 - scraper - INFO - Fetching RSS feed from https://seattlemedium.com/category/news/feed/ for Seattle Medium...
+2025-04-13 01:22:35,247 - scraper - INFO - Seattle Medium: Found 10 potential articles in RSS feed.
+2025-04-13 01:22:35,254 - scraper - INFO - Scraped 0 new articles from Seattle Medium
+2025-04-13 01:22:36,837 - scraper - INFO - Fetching RSS feed from https://www.thestranger.com/syndication/rss-feed-with-images for The Stranger...
+2025-04-13 01:22:41,894 - scraper - WARNING - No entries found in RSS feed for The Stranger
+2025-04-13 01:22:44,006 - scraper - INFO - Fetching RSS feed from https://crosscut.com/feed/ for Crosscut...
+2025-04-13 01:22:44,591 - scraper - INFO - Crosscut: Found 11 potential articles in RSS feed.
+2025-04-13 01:22:44,626 - scraper - INFO - Crosscut: Added article: What’s on your April ballot? King County fingerprint funding
+2025-04-13 01:22:46,522 - scraper - INFO - Crosscut: Not related to Seattle/Washington, skipping: The Nosh: Salt & Straw transforms ‘rescued food’ into ice cream
+2025-04-13 01:22:46,523 - scraper - INFO - Crosscut: Added article: ArtSEA: For Earth Month, Seattle artists show us what’s at stake
+2025-04-13 01:22:48,410 - scraper - INFO - Crosscut: Added article: Poll: WA voters say Trump is negatively impacting their lives
+2025-04-13 01:22:50,836 - scraper - INFO - Crosscut: Not related to Seattle/Washington, skipping: Your Last Meal | What food's in PBS host Danielle Chang's bag?
+2025-04-13 01:22:50,838 - scraper - INFO - Crosscut: Added article: Rachel Belle shares her easy, zero-waste kitchen hacks
+2025-04-13 01:22:52,762 - scraper - INFO - Crosscut: Added article: WA agency tightens workplace safety rules for student learners
+2025-04-13 01:22:55,030 - scraper - INFO - Crosscut: Added article: Finding forever homes for the Pacific Northwest’s wild mustangs
+2025-04-13 01:22:56,654 - scraper - INFO - Crosscut: Added article: The Last Reefnetters: WA's only remaining Lummi reefnet fisher
+2025-04-13 01:22:58,933 - scraper - INFO - Crosscut: Added article: Thousands rally in Seattle to protest Trump administration actions
+2025-04-13 01:23:00,983 - scraper - INFO - Scraped 8 new articles from Crosscut
+2025-04-13 01:23:03,712 - scraper - INFO - Fetching RSS feed from https://southseattleemerald.com/feed/ for South Seattle Emerald...
+2025-04-13 01:23:03,858 - scraper - WARNING - No entries found in RSS feed for South Seattle Emerald
+2025-04-13 01:23:05,169 - scraper - INFO - Fetching RSS feed from https://www.capitolhillseattle.com/feed/ for Capitol Hill Seattle Blog...
+2025-04-13 01:23:05,424 - scraper - INFO - Capitol Hill Seattle Blog: Found 5 potential articles in RSS feed.
+2025-04-13 01:23:05,427 - scraper - INFO - Capitol Hill Seattle Blog: Added article: Tortas, fun drinks, and women’s sports — Pitch the Baby and Condesa teaming up on Capitol Hill’s 19th Ave E
+2025-04-13 01:23:08,357 - scraper - INFO - Capitol Hill Seattle Blog: Added article: Seattle Fire makes complicated rope rescue after worker injured at E Madison construction site
+2025-04-13 01:23:11,112 - scraper - INFO - Capitol Hill Seattle Blog: Added article: Murder charge: Marshals track down suspect in deadly December 31st shooting at Broadway and Pike
+2025-04-13 01:23:12,401 - scraper - INFO - Capitol Hill Seattle Blog: Added article: Seattle City Council preparing proposal for larger $4.5M a year Democracy Voucher levy to go to voters this summer
+2025-04-13 01:23:15,277 - scraper - INFO - Capitol Hill Seattle Blog: Added article: Suspects in water pellet drive-by and harassment outside Capitol Hill’s Pony gay bar charged with hate crime
+2025-04-13 01:23:18,206 - scraper - INFO - Scraped 5 new articles from Capitol Hill Seattle Blog
+2025-04-13 01:23:19,711 - scraper - INFO - Fetching RSS feed from https://news.google.com/rss/search?q=seattle+washington+news&hl=en-US&gl=US&ceid=US:en for Google News - Seattle...
+2025-04-13 01:23:20,352 - scraper - INFO - Google News - Seattle: Found 102 potential articles in RSS feed.
+2025-04-13 01:23:20,618 - scraper - INFO - Google News - Seattle: Content too short, skipping: https://news.google.com/rss/articles/CBMimgJBVV95cUxPYThiNUU4UUtHRFBTdmtaUmJhcTFCT2FQSl9oSjRKYU5lMWRLN09nZEZUU0lEQzJhOGkwZFc2Z0VzVnBPZUtQTk1pakxUbW9SblVDdWZaMEZaanZDTE9fY1hiNVRtMFU4a1dNS2ZMT2p5UFlHTkF1WWV6UHJFaU5ESE1CbHB6Yi1PTGJBQTR2LTBzN2tqN2hmV2k0WG93a1RhUFIzazFXdW0tRU1sdHZTMlB2c0xwSmp6UEpmZmNONmFYaExxX3Ewb1FLdklEYkxuTDJmTHdQY3RLOWRyWE40Wno3TUg1UzlwZG1MdE5SNExHZzI5eDdrNTBoX2xXbld5NURFYVhqMXJ4bTdGTWJxR21WMjNVLXZGQ0E?oc=5
+2025-04-13 01:23:20,871 - scraper - INFO - Google News - Seattle: Content too short, skipping: https://news.google.com/rss/articles/CBMipgFBVV95cUxQdlcxei10SnpKbUZyeWlsTzZ2T3h5bDRhQ0ZVMHd5VXhxbmRIY2RPWnlFR3hNN0M2WDBYZ1hZQkY5RlJjc01JY2Z0d3VSdWthYWhjMlNsYlNxZGZfTTE0OG1MOE5GNjdSZGZFU0NuRzNUWXZiazFydGoxUjRoR3hhLWprazNkS0g3cElQRERaWVhVVk1JQ1hmcy1ydm0zYVFxYlRCbk9B?oc=5
+2025-04-13 01:23:21,128 - scraper - INFO - Google News - Seattle: Content too short, skipping: https://news.google.com/rss/articles/CBMi3wFBVV95cUxNV1JCQllWaHBGRnJDVDNDdHlOdEE3SU92Qy1hbW50MFo1TVZSX3FlUGhGWUdxSU5XSGJ5N1ItUXh4bEszUzB1T1JqNkNjVlJvUHFGS3hnZWNCWW9QWWo1U3BOd3psNWZJTEQ5NGsybUpnRkk2amJKeHYyZnd0SFU1QkozbmpWbHh1XzdQQmZYNnVZTURnMmhWR2FqVml2N1NncTRkYnR2TVMwZVFDY0VITndXbndoRzFPa25hckZ6MGJpOWZqejdWTFMxZU9RTkI0STlCNnZfbWF6WW9ncE5Z?oc=5
+2025-04-13 01:23:21,419 - scraper - INFO - Google News - Seattle: Added article: 'Safety concern' forces evacuation at Lake Washington High School in Kirkland - FOX 13 Seattle
+2025-04-13 01:23:23,921 - scraper - INFO - Google News - Seattle: Content too short, skipping: https://news.google.com/rss/articles/CBMiowFBVV95cUxQRFVQTE5uQVc4a0U0aVBQOWM0QVRsUWZyTkRFSTloRzJpeEtQQkNWUWVNaEJHRHlTcy1tbTRaRUc0M29HQTdGM1p1VFllU2pGMEFqaE1iOHdHcGkzekViRTF0ZmpCNXZUM0NrZ3R3WUVSVkJNYUEtTHZfUzFTVDBBNEV3Qjh6SC1kQTJpMWFVSHdqa2luRzZXdEhURWE5M2FaeVU40gG3AUFVX3lxTE9TdHl5QjJid2RsQVZaamRiMy1qYzlwZ25fNUpOSUNLbWVBLVFFUDdnOXQ0X1BRSDVFOHVnbll0aGtnNlB0QmRvTmVZeXdrblk5ejNfRnllUFZndzdMZ1hYOUgxakpsRjBJdmFLRE5uZ1c4WTBBMjNuR1lscURpZjhTS3pkd0hzU0s3RHNsYTZaQ2lXM01PY1dGRkZzclptSHI0STEteXRsMW9DT2xZSzN1TEZhN1V0aw?oc=5
+2025-04-13 01:23:24,170 - scraper - INFO - Google News - Seattle: Added article: Washington lawmakers aim to counter property tax efforts with constitutional amendments - MyNorthwest.com
+2025-04-13 01:23:26,248 - scraper - INFO - Google News - Seattle: Content too short, skipping: https://news.google.com/rss/articles/CBMitwFBVV95cUxQazRBSWR3SlFyRlF3YUJGc0FKU2lvTEpnQjY1ZEFHZERSemlUX3FCWjhZSFpJdkoySkRWRExIQ2lZbTJTbzZuZHJ2ckdvb2RTZGFsRURQYnZ1RUF1cVBQLXNDZUZkTjFMR1E1emRtcWI3cVFfTXp0cWF1c0d2bk5jeXVaSGpRQnlteVFubGF2VnlscktxM0FwX1ZSblRfWGdycXg3YUNwanV3Ty1fMG5GeFd2ejBqbWc?oc=5
+2025-04-13 01:23:26,491 - scraper - INFO - Google News - Seattle: Content too short, skipping: https://news.google.com/rss/articles/CBMiwAFBVV95cUxOeXAxV0UtNUI1Z3Q4Rk5UREwwV2lzcU41Zk5kd28zSHpneXdocElwQm5oWF9vcjJoMndrbV94U1ZaMllCNld3SkxsQ3lCeUF3bGhuY1hQa2NnbXlRX3RPWTNoSl83Q2hoMUxKdFFHTEhfVjIzTkVmRzF1Q1lqbUMzS2F2X054QXNYQ0NqRFRvVkhsMFZNdk9Ma0tjY1BTXzRaOEdBblZ4Tm9EQmcyRXVfbnl4YWc1dXl2RGoxQ2I3ZG4?oc=5
+2025-04-13 01:23:26,726 - scraper - INFO - Google News - Seattle: Added article: Libraries serve everyone who walks in. Why is Trump cutting them off? | Op-Ed - The Seattle Times
+2025-04-13 01:23:29,088 - scraper - INFO - Google News - Seattle: Content too short, skipping: https://news.google.com/rss/articles/CBMicEFVX3lxTE85ZGhSYkt3WFVNSzFOOTgya1FrSzV0bmwxU2Ewdkw5STZ3ZFl6UzhnMHhNeUEydTJkY3NDNGRMZUo4RHNibk1WU0Rncno0bWlUWDRIcm1qdWREWFNGU181SmlHOVdJemxFdk1rM05HU0XSAXZBVV95cUxPdDIxd2ZsLVRlTFR6Mll0djNpNXlfNWIwUXM1bU8zUElvZ2VNLVZ2TU1nY3FaM3hjUFJabWFFOVJCbTZVUVZxTkp4amFnNUZKUl9rMkdWeXNUMmRfdmpmR2hBNjFCOGxadFNXOG53dTdxRVdVekVR?oc=5
+2025-04-13 01:23:29,091 - scraper - INFO - Scraped 3 new articles from Google News - Seattle
+2025-04-13 01:23:29,096 - scraper - INFO - Scraper completed. Total articles in database: 56
+2025-04-13 01:27:57,346 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-13 01:27:57,346 - apscheduler.scheduler - INFO - Added job "run_pipeline" to job store "default"
+2025-04-13 01:27:57,346 - apscheduler.scheduler - INFO - Scheduler started
+2025-04-13 01:27:57,376 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 01:27:57,377 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 01:27:57,379 - werkzeug - INFO -  * Restarting with stat
+2025-04-13 01:28:09,536 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-13 01:28:09,536 - apscheduler.scheduler - INFO - Added job "run_pipeline" to job store "default"
+2025-04-13 01:28:09,536 - apscheduler.scheduler - INFO - Scheduler started
+2025-04-13 01:28:09,547 - werkzeug - WARNING -  * Debugger is active!
+2025-04-13 01:28:09,553 - werkzeug - INFO -  * Debugger PIN: 107-642-006
+2025-04-13 01:28:09,940 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:28:09] "GET / HTTP/1.1" 200 -
+2025-04-13 01:28:26,208 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:28:26] "GET /analytics HTTP/1.1" 200 -
+2025-04-13 01:28:26,733 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:28:26] "GET /static/source_distribution.png HTTP/1.1" 200 -
+2025-04-13 01:28:26,752 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:28:26] "GET /static/entity_frequency.png HTTP/1.1" 200 -
+2025-04-13 01:28:26,757 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:28:26] "GET /static/cluster_distribution.png HTTP/1.1" 200 -
+2025-04-13 01:31:18,197 - sqlalchemy.pool.impl.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 23960 and this is thread id 22380.
+2025-04-13 01:31:18,201 - sqlalchemy.pool.impl.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x000001390AC614E0>
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 23960 and this is thread id 22380.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 23960 and this is thread id 22380.
+2025-04-13 01:31:18,201 - sqlalchemy.pool.impl.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 23960 and this is thread id 22380.
+2025-04-13 01:31:18,202 - sqlalchemy.pool.impl.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x000001393E71B7B0>
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 23960 and this is thread id 22380.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 23960 and this is thread id 22380.
+2025-04-13 01:39:35,992 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-13 01:39:35,992 - apscheduler.scheduler - INFO - Added job "run_pipeline" to job store "default"
+2025-04-13 01:39:35,993 - apscheduler.scheduler - INFO - Scheduler started
+2025-04-13 01:39:36,020 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 01:39:36,020 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 01:39:36,023 - werkzeug - INFO -  * Restarting with stat
+2025-04-13 01:39:48,169 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-13 01:39:48,169 - apscheduler.scheduler - INFO - Added job "run_pipeline" to job store "default"
+2025-04-13 01:39:48,169 - apscheduler.scheduler - INFO - Scheduler started
+2025-04-13 01:39:48,179 - werkzeug - WARNING -  * Debugger is active!
+2025-04-13 01:39:48,184 - werkzeug - INFO -  * Debugger PIN: 107-642-006
+2025-04-13 01:39:48,568 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:39:48] "GET / HTTP/1.1" 200 -
+2025-04-13 01:39:48,847 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:39:48] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-04-13 01:39:57,064 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:39:57] "GET /cluster/0 HTTP/1.1" 200 -
+2025-04-13 01:39:57,114 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:39:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-13 01:40:16,036 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:16] "GET /about HTTP/1.1" 200 -
+2025-04-13 01:40:16,090 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-13 01:40:28,095 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:28] "GET / HTTP/1.1" 200 -
+2025-04-13 01:40:28,145 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-13 01:40:30,113 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:30] "GET /cluster/1 HTTP/1.1" 200 -
+2025-04-13 01:40:30,160 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-13 01:40:45,401 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:45] "GET /analytics HTTP/1.1" 200 -
+2025-04-13 01:40:45,453 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-13 01:40:45,459 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:45] "[33mGET /static/plots/articles_over_time.png?5074 HTTP/1.1[0m" 404 -
+2025-04-13 01:40:45,464 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:45] "[33mGET /static/plots/articles_by_source.png?9219 HTTP/1.1[0m" 404 -
+2025-04-13 01:40:45,466 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:45] "[33mGET /static/plots/cluster_size_distribution.png?1203 HTTP/1.1[0m" 404 -
+2025-04-13 01:40:45,470 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:40:45] "[33mGET /static/plots/top_entities.png?2545 HTTP/1.1[0m" 404 -
+2025-04-13 01:42:12,444 - sqlalchemy.pool.impl.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+2025-04-13 01:42:12,445 - sqlalchemy.pool.impl.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x000002955827C210>
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+2025-04-13 01:42:12,446 - sqlalchemy.pool.impl.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+2025-04-13 01:42:12,446 - sqlalchemy.pool.impl.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x000002955827CA80>
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+2025-04-13 01:42:12,447 - sqlalchemy.pool.impl.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+2025-04-13 01:42:12,447 - sqlalchemy.pool.impl.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x000002955827CC60>
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 763, in _finalize_fairy
+    fairy._reset(pool, transaction_was_reset)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1038, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 683, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\pool\base.py", line 260, in _close_connection
+    self._dialect.do_terminate(connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 689, in do_terminate
+    self.do_close(dbapi_connection)
+  File "C:\Users\anays\heydev\Copilot\LocalEventDetection\venv\lib\site-packages\sqlalchemy\engine\default.py", line 692, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 11936 and this is thread id 25420.
+2025-04-13 01:42:31,590 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-13 01:42:34,632 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:34] "GET / HTTP/1.1" 200 -
+2025-04-13 01:42:34,671 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:34] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-04-13 01:42:34,726 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-13 01:42:36,891 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:36] "GET / HTTP/1.1" 200 -
+2025-04-13 01:42:36,933 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-13 01:42:41,202 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:41] "[35m[1mGET /analytics HTTP/1.1[0m" 500 -
+2025-04-13 01:42:41,252 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:41] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-13 01:42:41,257 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:41] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-13 01:42:41,297 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:41] "GET /analytics?__debugger__=yes&cmd=resource&f=console.png&s=l5y9LNRszecytcsjJiUz HTTP/1.1" 200 -
+2025-04-13 01:42:41,322 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:42:41] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-13 01:43:05,966 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:43:05] "GET /analytics HTTP/1.1" 200 -
+2025-04-13 01:43:06,009 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:43:06] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-04-13 01:43:06,030 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:43:06] "GET /static/cluster_distribution.png HTTP/1.1" 200 -
+2025-04-13 01:43:06,031 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:43:06] "GET /static/entity_frequency.png HTTP/1.1" 200 -
+2025-04-13 01:43:06,035 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:43:06] "GET /static/source_distribution.png HTTP/1.1" 200 -
+2025-04-13 01:43:06,077 - werkzeug - INFO - 127.0.0.1 - - [13/Apr/2025 01:43:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

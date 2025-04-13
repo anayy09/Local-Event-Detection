@@ -3,60 +3,71 @@
 {% block title %}Cluster: {{ cluster.topic or "Cluster " + cluster.id|string }}{% endblock %}
 
 {% block content %}
-<div class="row">
+<div class="row mb-3">
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active">{{ cluster.topic or "Cluster " + cluster.id|string }}</li>
+                <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ cluster.topic or "Cluster " + cluster.id|string }}</li>
             </ol>
         </nav>
+        <h1 class="h2">{{ cluster.topic or "Cluster " + cluster.id|string }}</h1>
+        <hr>
     </div>
 </div>
 
 <div class="row mb-4">
-    <div class="col-12">
-        <div class="card">
+    <div class="col-lg-8">
+         <div class="card mb-4">
             <div class="card-header bg-primary text-white">
-                <h2 class="h4 mb-0">{{ cluster.topic or "Cluster " + cluster.id|string }}</h2>
+                Event Summary
             </div>
             <div class="card-body">
-                <h5 class="card-title">Summary</h5>
-                <div class="summary-text">{{ summary }}</div>
+                <div class="summary-text">{{ summary or "Summary not available." }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+             <div class="card-header">
+                Key Entities
+            </div>
+            <div class="card-body">
+                {% if entities %}
+                    {% for entity in entities %}
+                        <span class="entity-pill entity-{{ entity.label }}">
+                            {{ entity.text }} <span class="text-muted">({{ entity.label }})</span>
+                        </span>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted">No key entities identified for this cluster.</p>
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <h3>Key Entities</h3>
-        <div>
-            {% for entity in entities %}
-                <span class="entity-pill entity-{{ entity.label }}">
-                    {{ entity.text }} ({{ entity.label }})
-                </span>
-            {% endfor %}
-        </div>
-    </div>
-</div>
 
 <div class="row">
     <div class="col-12">
-        <h3>Articles in this Cluster ({{ articles|length }})</h3>
+        <h3 class="mb-3">Articles in this Cluster ({{ articles|length }})</h3>
         <div class="list-group">
             {% for article in articles %}
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between mb-1">
                     <h5 class="mb-1">{{ article.title }}</h5>
-                    <small>{{ article.published_date.strftime('%Y-%m-%d') }}</small>
+                    <small class="text-muted">{{ article.published_date.strftime('%Y-%m-%d') if article.published_date else 'N/A' }}</small>
                 </div>
-                <p class="mb-1">{{ article.content|truncate(200) }}</p>
-                <small>Source: {{ article.source }} {% if article.author %}| Author: {{ article.author }}{% endif %}</small>
-                <div class="mt-2">
-                    <a href="{{ article.url }}" target="_blank" class="btn btn-sm btn-outline-primary">Read Original</a>
+                <p class="mb-2">{{ article.content|striptags|truncate(250, True) }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                     <small class="text-muted">Source: {{ article.source }} {% if article.author %}| Author: {{ article.author }}{% endif %}</small>
+                     <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">Read Original &rarr;</a>
                 </div>
             </div>
+            {% else %}
+             <div class="list-group-item">
+                 <p class="text-muted mb-0">No articles found for this cluster.</p>
+             </div>
             {% endfor %}
         </div>
     </div>
