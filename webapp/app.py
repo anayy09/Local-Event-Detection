@@ -14,6 +14,7 @@ from processing.cluster import cluster_articles
 from processing.topic_model import extract_topics
 from summarization.summarize import generate_cluster_summaries
 from analysis.visualize import generate_all_visualizations
+from sqlalchemy import func
 
 app = Flask(__name__)
 
