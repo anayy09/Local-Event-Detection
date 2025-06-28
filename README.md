@@ -1,4 +1,4 @@
-# Local Event Detection and Summarization
+# Intelligent Local News Analytics Platform
 
 An intelligent news aggregation and analysis system that automatically monitors local Seattle/Washington news sources, detects emerging events through clustering, and provides comprehensive summaries and insights. The system combines advanced NLP techniques with web scraping to deliver real-time event detection and analysis.
 
